@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polityka prywatności – B4wood</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================
+           CSS VARIABLES - WOOD INDUSTRY PALETTE
+        ============================================ */
+        :root {
+            --white: #FFFFFF;
+            --cream: #FAF8F5;
+            --cream-dark: #F3EFE9;
+            --orange: #E07A2F;
+            --orange-dark: #C96A22;
+            --orange-light: rgba(224, 122, 47, 0.1);
+            --gray-900: #1A1A1A;
+            --gray-800: #2D2D2D;
+            --gray-700: #404040;
+            --gray-600: #5C5C5C;
+            --gray-500: #7A7A7A;
+            --gray-400: #9CA3AF;
+            --gray-200: #E5E5E5;
+            --gray-100: #F5F5F5;
+            
+            --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-serif: 'Instrument Serif', Georgia, serif;
+            
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 40px rgba(0,0,0,0.1);
+            
+            --transition: all 0.3s ease;
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 16px;
+        }
+
+        /* ============================================
+           RESET & BASE
+        ============================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--gray-800);
+            background: var(--white);
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           NAVBAR
+        ============================================ */
+        .navbar {
+            background: var(--white);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .navbar-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 50px;
+        }
+
+        /* ============================================
+           CONTENT
+        ============================================ */
+        .privacy-section {
+            padding: 80px 0 120px;
+            background: var(--white);
+        }
+
+        .privacy-header {
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 2px solid var(--orange);
+        }
+
+        .privacy-header h1 {
+            font-size: 2.5rem;
+            color: var(--gray-900);
+            margin-bottom: 16px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            margin-bottom: 24px;
+        }
+
+        .breadcrumb a {
+            color: var(--orange);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--orange-dark);
+        }
+
+        .privacy-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .privacy-content h2 {
+            font-size: 1.75rem;
+            color: var(--gray-900);
+            margin-top: 48px;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .privacy-content h3 {
+            font-size: 1.25rem;
+            color: var(--gray-800);
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+
+        .privacy-content p {
+            margin-bottom: 16px;
+            color: var(--gray-700);
+            line-height: 1.8;
+        }
+
+        .privacy-content ul {
+            margin-left: 24px;
+            margin-bottom: 24px;
+        }
+
+        .privacy-content li {
+            margin-bottom: 12px;
+            color: var(--gray-700);
+            line-height: 1.8;
+        }
+
+        .privacy-content strong {
+            color: var(--gray-900);
+        }
+
+        .privacy-content a {
+            color: var(--orange);
+            text-decoration: none;
+        }
+
+        .privacy-content a:hover {
+            text-decoration: underline;
+        }
+
+        /* ============================================
+           FOOTER
+        ============================================ */
+        .footer {
+            background: var(--gray-900);
+            color: var(--gray-400);
+            padding: 60px 0 24px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--gray-700);
+        }
+
+        .footer-bottom p {
+            color: var(--gray-500);
+            font-size: 0.875rem;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-bottom-links a {
+            color: var(--gray-500);
+            font-size: 0.875rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--white);
+        }
+
+        /* ============================================
+           RESPONSIVE
+        ============================================ */
+        @media (max-width: 768px) {
+            .privacy-header h1 {
+                font-size: 2rem;
+            }
+
+            .privacy-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ============================================
+         NAVBAR
+    ============================================ -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-inner">
+                <a href="index.html" class="logo">
+                    <img src="logo.png" alt="B4wood" class="logo-img">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         PRIVACY POLICY CONTENT
+    ============================================ -->
+    <section class="privacy-section">
+        <div class="container">
+            <div class="privacy-content">
+                <div class="breadcrumb">
+                    <a href="index.html">Strona główna</a>
+                    <span>/</span>
+                    <span>Polityka prywatności</span>
+                </div>
+
+                <div class="privacy-header">
+                    <h1>Polityka prywatności</h1>
+                </div>
+
+                <p>Informujemy, że zgodnie Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE właścicielem strony <a href="https://b4wood.pl/">https://b4wood.pl/</a> oraz administratorem Państwa danych osobowych jest B4wood sp. z o.o. z siedzibą w Łysomicach, 87-148, Bukowa 21, zwana dalej Administratorem.</p>
+
+                <p>Kontakt z Administratorem w sprawie ochrony danych osobowych możliwy jest pisemnie na adres B4wood sp. z o.o. 87-148 Łysomice, Bukowa 21 lub pocztą mailową na adres <a href="mailto:biuro@b4wood.pl">biuro@b4wood.pl</a></p>
+
+                <p>Korzystając ze strony <a href="https://b4wood.pl/">https://b4wood.pl/</a> wyrażasz zgodę na przetwarzanie danych osobowych zgodnie z zapisami niniejszej Polityki zamieszczonej pod adresem <a href="https://b4wood.pl/polityka">https://b4wood.pl/polityka</a></p>
+
+                <h2>Cele przetwarzania danych osobowych</h2>
+
+                <p>Administrator wykorzystuje przekazane dane osobowe w celu:</p>
+
+                <ul>
+                    <li>przedstawiania ofert handlowych drogą mailową bądź telefonicznie</li>
+                    <li>przedstawiania informacji o oferowanych produktach/usługach drogą mailową bądź telefonicznie</li>
+                    <li>spełnienia przez Administratora obowiązków wynikających z odrębnych przepisów prawnych</li>
+                    <li>realizacji podpisanych umów/zleconych usług w tym przez podmioty współpracujące, biorące udział w realizacji usługi, np. firmy transportowe</li>
+                    <li>w ramach procesu rekrutacyjnego prowadzonego przez Administratora.</li>
+                </ul>
+
+                <p>Pozyskane dane osobowe przechowywane są przez okres niezbędny do realizacji celu przetwarzania.</p>
+
+                <h2>Przekazanie danych osobowych</h2>
+
+                <p>Przekazanie danych osobowych jest dobrowolne, należy jednak mieć świadomość, iż w przypadku gdy nie zostaną one podane Administrator nie będzie w stanie przedstawić oferty/ odpowiedzi na pytanie/ świadczyć usług.</p>
+
+                <p>Przekazujący dane osobowe ma prawo do:</p>
+
+                <ul>
+                    <li>dostępu do swoich danych oraz otrzymania ich kopii,</li>
+                    <li>cofnięcia wyrażonej zgody na przetwarzanie danych,</li>
+                    <li>żądania sprostowania (poprawienia) swoich danych,</li>
+                    <li>usunięcia danych,</li>
+                    <li>ograniczenia przetwarzania danych,</li>
+                    <li>przenoszenia danych,</li>
+                    <li>wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych w sprawie naruszenia prawa podczas przetwarzania danych osobowych</li>
+                </ul>
+
+                <h2>Bezpieczeństwo przekazanych danych</h2>
+
+                <p>Administrator dokłada wszelkich starań aby przekazane i przechowywane dane były należycie zabezpieczone przed ich niedozwolonym lub niezgodnym z prawem przetwarzaniem oraz przypadkową utratą, zniszczeniem lub uszkodzeniem.</p>
+
+                <h2>Pliki Cookies</h2>
+
+                <p>Administrator za pomocą automatycznych narzędzi teleinformatycznych stosuje tzw. „pliki Cookies", które są przechowywane na urządzeniu osoby korzystającej z serwisu www.b4wood.pl.</p>
+
+                <p>Korzystając z serwisu www.b4wood.pl wyrażasz zgodę na wykorzystanie tych plików. Pliki cookies możesz zablokować w ustawieniach Twojej przeglądarki.</p>
+
+                <p>Wykorzystywane pliki cookies mogą służyć do:</p>
+
+                <ul>
+                    <li>właściwego funkcjonowania serwisu internetowego www.b4wood.pl (pliki niezbędne)</li>
+                    <li>pamiętania ustawień wybranych przez użytkownika</li>
+                    <li>zapewnienia bezpieczeństwa podczas przeglądania serwisu www.b4wood.pl</li>
+                </ul>
+
+                <p>Niniejsza Polityka prywatności jest weryfikowana na bieżąco i aktualizowana adekwatnie do potrzeb.</p>
+
+                <p>Wszelkie treści, zdjęcia i rysunki zamieszczone na stronie www.b4wood.pl mają charakter informacyjny i poglądowy i nie stanowią oferty w rozumieniu Kodeksu Cywilnego.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+    ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2026 B4wood Sp. z o.o. Wszelkie prawa zastrzeżone.</p>
+                <div class="footer-bottom-links">
+                    <a href="polityka.html">Polityka prywatności</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
