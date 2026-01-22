@@ -3,7 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>B4wood – Profesjonalne rozwiązania dla przemysłu drzewnego</title>
+    <title>B4wood – Profesjonalne rozwiązania dla przemysłu drzewnego</title>
+    
+    <!-- Country detection and redirect for non-Polish visitors -->
+    <script>
+        (function() {
+            // Skip if already redirected or user chose Polish
+            if (sessionStorage.getItem('langChosen')) return;
+            
+            fetch('https://ipapi.co/json/')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.country_code && data.country_code !== 'PL') {
+                        sessionStorage.setItem('langChosen', 'en');
+                        window.location.href = 'index-en.html';
+                    } else {
+                        sessionStorage.setItem('langChosen', 'pl');
+                    }
+                })
+                .catch(() => {
+                    // On error, stay on Polish version
+                    sessionStorage.setItem('langChosen', 'pl');
+                });
+        })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -329,6 +352,27 @@
             width: 24px;
             height: 2px;
             background: var(--gray-800);
+        }
+
+        .lang-switch {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-left: 16px;
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+
+        .lang-switch a {
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .lang-switch a:hover,
+        .lang-switch a.active {
+            background: var(--orange-light);
+            color: var(--orange);
         }
 
         /* ============================================
@@ -1630,6 +1674,10 @@
                 <div class="nav-cta">
                     <span class="nav-phone">+48 880 100 140</span>
                     <a href="#contact" class="btn btn-primary">Zapytaj o ofertę</a>
+                    <div class="lang-switch">
+                        <a href="index.html" class="active">PL</a>
+                        <a href="index-en.html">EN</a>
+                    </div>
                 </div>
 
                 <div class="mobile-toggle">
@@ -2424,6 +2472,14 @@
         // Page load animation
         window.addEventListener('load', () => {
             document.body.classList.add('page-loaded');
+            
+            // Auto scroll to products section on page load
+            setTimeout(() => {
+                const productsSection = document.getElementById('products');
+                if (productsSection && !window.location.hash) {
+                    productsSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 300);
         });
 
         // Scroll animations - Intersection Observer
